@@ -9,6 +9,8 @@ app.use(express.json());
 
 app.use('/inventory', getInvItem);
 
+app.use('/warehouses', instockroutes);
+
 app.listen(port, () => {
     console.log(`listening on ${host}`);
 })
