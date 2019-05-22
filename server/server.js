@@ -12,6 +12,7 @@ app.use(express.static('assets'));
 app.use(cors());
 
 app.use('/warehouses', instockroutes);
+app.use('/inventory', instockroutes);
 
 app.listen(port, () => {
     console.log(`listening on ${url}`);
