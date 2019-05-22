@@ -4,11 +4,18 @@ const instockroutes = require('./routes/instockroutes');
 const app = express();
 const port = 8080;
 const url = `http://localhost:8080`;
+const warehouses = require('./data/warehouses.json')
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static('assets'));
 app.use(cors());
+
+const getAllWarehouses = (req, res) => {
+    res.json(warehouses);
+}
+app.route('/warehouses')
+    .get(getAllWarehouses)
 
 app.listen(port, () => {
     console.log(`listening on ${url}`);
