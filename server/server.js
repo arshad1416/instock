@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const instockroutes = require('./Routes/instockroutes');
+const instockroutes = require('./routes/instockroutes');
 const app = express();
 const port = 8080;
 const url = `http://localhost:8080`;
