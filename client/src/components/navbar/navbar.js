@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './warehouse.scss';
+import './navbar.scss';
 
-class Warehouse extends Component {
+class Navbar extends Component {
     render() {
         return (
 
@@ -9,4 +9,4 @@ class Warehouse extends Component {
     }
 }
 
-export default Warehouse;
+export default Navbar;
