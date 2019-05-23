@@ -4,7 +4,7 @@ import './warehouse.scss';
 class Warehouse extends Component {
     render() {
         return (
-
+            <h1>warehouse</h1>
         );
     }
 }
