@@ -1,10 +1,13 @@
-import React, {Component} from 'react';
-import './error.scss';
+import React, { Component } from 'react'
 
-class Error extends Component {
-    return (
-
-    );
+export class error extends Component {
+    render() {
+        return (
+            <div>
+                
+            </div>
+        )
+    }
 }
 
-export default Error;
+export default error

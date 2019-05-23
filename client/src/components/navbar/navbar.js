@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
-import './navbar.scss';
+import React, { Component } from 'react'
 
-class Navbar extends Component {
+export class navbar extends Component {
     render() {
         return (
-
-        );
+            <div>
+                
+            </div>
+        )
     }
 }
 
-export default Navbar;
+export default navbar
