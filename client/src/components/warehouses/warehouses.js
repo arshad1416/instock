@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
-import './warehouse.scss';
+import React, { Component } from 'react'
 
-class Warehouse extends Component {
+export class warehouses extends Component {
     render() {
         return (
-
+            <h1>warehouse</h1>
         );
     }
 }
 
-export default Warehouse;
+export default warehouses
