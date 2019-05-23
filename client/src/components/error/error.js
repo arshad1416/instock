@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import './error.scss';
 
 class Error extends Component {
-    return (
-
-    );
+    render(){
+        return (
+            <section></section>
+        );
+    }
 }
 
 export default Error;

@@ -4,7 +4,7 @@ import './inventory.scss';
 class Inventory extends Component {
     render() {
         return (
-
+            <section></section>
         );
     }
 }

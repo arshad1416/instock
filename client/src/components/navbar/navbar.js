@@ -4,7 +4,7 @@ import './navbar.scss';
 class Navbar extends Component {
     render() {
         return (
-
+            <section></section>
         );
     }
 }
