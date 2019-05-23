@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import './warehouse.scss';
+import './warehouses.scss';
 
 class Warehouse extends Component {
     render() {
         return (
-
+            <h1>Warehouse</h1>
         );
     }
 }

@@ -14,8 +14,8 @@ class App extends Component {
             <Navbar />
           <Switch>
             <Route path="/" exact component={Main} />
-            <Route path="/warhouses" component={Warehouses} />
-            <Route path="/inventory" component={Inventory} />
+            <Route path="/warhouses" component={Warehouses}/>
+            <Route path="/inventory" component={Inventory}/>
             <Route path="/warehouses/:id" component={Warehouses} />
             <Route path="/inventory/:id" component={Inventory} />
             <Route component={Error} />
