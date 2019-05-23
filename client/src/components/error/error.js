@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import './error.scss';
+import React, { Component } from 'react'
 
 class Error extends Component {
     render(){
@@ -11,4 +10,4 @@ class Error extends Component {
     }
 }
 
-export default Error;
+export default error
