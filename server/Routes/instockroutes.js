@@ -31,7 +31,7 @@ const getSingleInventory = (req, res) => {
 const createNewWarehouse = (req, res) => {
     const {id, name, inventoryCategories} = req.body;
     const {street, suiteNum, city, province, postal} = req.body.address;
-    const {name, title, phone, email} = req.body.contact;
+    // const {name, title, phone, email} = req.body.contact;
     const newWarehouse = {
         id,
         name,
