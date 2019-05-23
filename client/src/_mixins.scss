@@ -106,4 +106,27 @@
 }
 
 // Miscellaneous
-
+@mixin side-margin{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @media (min-width:768px){
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+    @media (min-width:1440px){
+        margin-left: 180px;
+        margin-right: 180px;
+    }
+}
+@mixin side-padding{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media (min-width:768px){
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    @media (min-width:1440px){
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+}
