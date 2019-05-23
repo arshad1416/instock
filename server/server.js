@@ -13,6 +13,7 @@ app.use('/inventory', getInvItem);
 
 app.use('/warehouses', inStockRoutes);
 app.use('/inventory', inStockRoutes);
+app.use('/newwarehouses', inStockRoutes);
 
 app.use('/', inStockRoutes)
 
