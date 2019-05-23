@@ -3,10 +3,8 @@ import React, { Component } from 'react'
 export class warehouses extends Component {
     render() {
         return (
-            <div>
-                
-            </div>
-        )
+            <h1>warehouse</h1>
+        );
     }
 }
 
