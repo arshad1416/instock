@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors');
+const inStockRoutes = require('./routes/instockroutes');
 const getInvItem = require('./getInvItemId/getInvItemId');
 const app = express();
 const port = 8080;
@@ -9,8 +11,10 @@ app.use(express.json());
 
 app.use('/inventory', getInvItem);
 
-app.use('/warehouses', instockroutes);
-app.use('/inventory', instockroutes);
+app.use('/warehouses', inStockRoutes);
+app.use('/inventory', inStockRoutes);
+
+app.use('/', inStockRoutes)
 
 app.listen(port, () => {
     console.log(`listening on ${host}`);
