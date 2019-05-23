@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const { Router } = require('express');
 const warehouses = require('../data/warehouses.json')
 const inventory = require('../data/inventory.json')
 
@@ -29,9 +28,30 @@ const getSingleInventory = (req, res) => {
     res.json(foundInv);
 }
 
+const createNewWarehouse = (req, res) => {
+    const {id, name, inventoryCategories} = req.body;
+    const {street, suiteNum, city, province, postal} = req.body.address;
+    const {name, title, phone, email} = req.body.contact;
+    const newWarehouse = {
+        id,
+        name,
+        inventoryCategories,
+        address: {street, suiteNum, city, province, postal},
+        contact: {name, title, phone, email}
+    }
+    warehouse.push(newWarehouse);
+    res.json(newWarehouse);
+    
+    if (!newWarehouse)
+    {
+        res.status(400).json({error: 'The information provided is invalid or your some information is missing.'});
+    }
+};
+
 router.get('/warehouses/:id/inventory', showInvById)
 router.get('/inventory/:id', getSingleInventory);
 router.get('/inventory', getAllInventory);
 router.get('/warehouses', getAllWarehouses);
+router.post('/newwarehouses', createNewWarehouse);
 
 module.exports = router;
