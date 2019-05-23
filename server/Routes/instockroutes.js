@@ -29,7 +29,6 @@ const getSingleInventory = (req, res) => {
 }
 
 const createNewWarehouse = (req, res) => {
-    console.log({...req.body})
     const newWarehouse = {
         ...req.body
     }
