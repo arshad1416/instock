@@ -44,7 +44,7 @@ const createNewWarehouse = (req, res) => {
     
     if (!newWarehouse)
     {
-        res.status(400).json({error: 'The information provided is invalid or your some information is missing.'});
+        res.status(400).json({error: 'The information provided is invalid or some information is missing.'});
     }
 };
 
