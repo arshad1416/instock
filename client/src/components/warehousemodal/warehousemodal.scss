@@ -1,0 +1,61 @@
+@import '../../mixins';
+@import '../../variable';
+
+.warehouseModal {
+    @include side-margin;
+
+    &__title {
+        @include mobile-h1;
+        margin-bottom: 1.5rem;
+    }
+
+    &__spacing {
+        margin-bottom: 1rem;
+    }
+
+    &__fieldTitle {
+        margin: 0;
+        padding-bottom: 0.25rem;
+        @include mobile-h2;
+        color: $textLabel;
+        text-transform: uppercase;
+    }
+
+    &__field {
+        @include input;
+
+    }
+    
+    &__dropDown {
+        width: 288px;
+    }
+
+    &__textArea {
+        height: 5rem;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__buttonSave {
+        width: 18rem;
+        height: 3rem;
+        padding: 0;
+        background-color: $instock-blue;
+        border-radius: 4px;
+        text-transform: uppercase;
+        @include mobile-h2;
+        color: $alabaster;
+    }
+
+    &__buttonCancel {
+        width: 18rem;
+        margin: 1.5rem 0;
+        padding: 0;
+        text-transform: uppercase;
+        @include mobile-h2;
+        color: $instock-blue;
+    }
+}
