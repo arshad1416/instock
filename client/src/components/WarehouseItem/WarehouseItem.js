@@ -1,17 +1,38 @@
 import React, {Component} from 'react';
 import './warehouseItem.scss'
-
+import rightArrow from '../../assets/svg/Icon-arrow-right.svg'
 class WarehouseItem extends Component {
     render() {
+        const address = `${this.props.street}, ${this.props.city}, ${this.props.province}`
         return (
             <section className="warehouseItem">
-                <h2 className="warehouseItem__header">Warehouse1</h2>
-                <div className="warehouseItem__adress">432 King Street, Toronto, ON</div>
-                <div className="warehouseItem__name">Sarah Blaha</div>
-                <div className="warehouseItem__title">Manager</div>
-                <div className="warehouseItem__phone">416 555 5555</div>
-                <div className="warehouseItem__email">sasha@sasha.com</div>
-                <div className="warehouseItem__categories">blala,blvlad,asdasdad,asdasdasd,asdasdasd,asdasdas</div>
+                {this.props.index===0 ? <div className="warehouseItem__labels">
+                    <h1 className="warehouseItem__labels__warehouse">WAREHOUSE</h1>
+                    <h1 className="warehouseItem__labels__contact">CONTACT</h1>
+                    <h1 className="warehouseItem__labels__info">CONTACT INFORMATION</h1>
+                    <h1 className="warehouseItem__labels__categories">CATEGORIES</h1>
+                </div> : null}
+                <div className="warehouseItem--desk">
+                <div className="warehouseItem__header--flexRow">
+                    <div className="warehouseItem__header--desk">
+                        <h2 className="warehouseItem__header">{this.props.name}</h2>
+                        <div className="warehouseItem__adress">{address}</div>
+                    </div>
+                    <button className="warehouseItem__button"><img src={rightArrow}/></button>
+                </div>
+                <div className="warehouseItem--tablet">
+                    <div>
+                        <div className="warehouseItem__name">{this.props.contactName}</div>
+                        <div className="warehouseItem__title">{this.props.title}</div>
+                    </div>
+                    <div>
+                        <div className="warehouseItem__phone">{this.props.phone}</div>
+                        <div className="warehouseItem__email">{this.props.email}</div>
+                    </div>
+                    <div className="warehouseItem__categories">{this.props.categories}</div>
+                    <button className="warehouseItem__button2"><img src={rightArrow}/></button>
+                </div>
+                </div>
             </section>
                
         );

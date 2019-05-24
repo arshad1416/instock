@@ -4,8 +4,10 @@ import './error.scss';
 class Error extends Component {
     render(){
         return (
-            <section></section>
-        );
+            <h1>
+                Error Message
+            </h1>
+        )
     }
 }
 

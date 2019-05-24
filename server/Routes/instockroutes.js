@@ -29,17 +29,10 @@ const getSingleInventory = (req, res) => {
 }
 
 const createNewWarehouse = (req, res) => {
-    const {id, name, inventoryCategories} = req.body;
-    const {street, suiteNum, city, province, postal} = req.body.address;
-    const {name, title, phone, email} = req.body.contact;
     const newWarehouse = {
-        id,
-        name,
-        inventoryCategories,
-        address: {street, suiteNum, city, province, postal},
-        contact: {name, title, phone, email}
+        ...req.body
     }
-    warehouse.push(newWarehouse);
+    warehouses.push(newWarehouse);
     res.json(newWarehouse);
     
     if (!newWarehouse)

@@ -7,18 +7,33 @@
         margin-top: 2rem;
         margin-bottom: 1rem;
         @include mobile-h1();
+        @media (min-width: 768px){
+            margin-top: 0;
+            margin-bottom: 0;
+            @include desktop-tablet-h1();
+        }
+        &--tablet{
+            @media (min-width: 768px){
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
 
     }
     &__search-container{
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 230px;
         margin-bottom: 2rem;
         border: solid 1px $textFieldBorder;
         border-radius: 0.25rem;
         @media (min-width: 768px){
             margin-bottom: 0;
             margin-right: 1.5rem;
+            width: 219px;
         }
         &:focus{
             outline:none;
