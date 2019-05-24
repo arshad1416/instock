@@ -17,7 +17,7 @@ class Inventory extends Component {
             <div>
                 <h2>Inventory</h2>
                 <input type="text" placeholder="Search"/>
-                <p>{item.}</p>
+                <p>{item}</p>
             </div>
         ));
     }
