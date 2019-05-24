@@ -3,7 +3,7 @@ import Logo from '../../assets/logo/Logo-instock.svg';
 import { NavLink } from 'react-router-dom'; 
 import './navbar.scss';
 
-class Navbar extends Component {
+class navbar extends Component {
     render() {        
         return (
                 <div className="navBar">
@@ -23,4 +23,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default navbar
