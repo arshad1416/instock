@@ -81,6 +81,12 @@
 
 //MediaQueries
 
+@mixin mobile {
+    @media (min-width: 320px) {
+        @content;
+    }
+}
+
 @mixin mobile-tablet {
     @media (min-width: 321px) and (max-width: 767px) {
         @content;
