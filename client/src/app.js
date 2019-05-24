@@ -4,6 +4,7 @@ import Main from './components/main/main';
 import Navbar from './components/navbar/navbar';
 import Warehouses from './components/warehouses/warehouses';
 import Inventory from './components/inventory/inventory';
+import WarehouseModal from './components/warehousemodal/warehousemodal';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Error from './components/error/error';
 
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/inventory" component={Inventory} />
             <Route path="/warehouses/:id" component={Warehouses} />
             <Route path="/inventory/:id" component={Inventory} />
+            <Route path="/warehousemodal" component={WarehouseModal} />
             <Route component={Error} />
           </Switch>
       </BrowserRouter>
