@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
+import './warehouses.scss';
 
 export class warehouses extends Component {
     render() {
         return (
-            <h1>warehouse</h1>
+            <h1>Warehouse</h1>
         );
     }
 }
