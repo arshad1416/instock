@@ -35,7 +35,7 @@ height: 80px;
 
         &--active{
             color: $white;
-            padding-bottom: 0.6rem;    
+            padding-bottom: 0.5rem;    
             width: 50%;            
             border-bottom: 4px solid $white;
         }
@@ -49,6 +49,7 @@ height: 80px;
     }
 
     @media (min-width: 720px){
+        @include desktop-tablet-h3;
         flex-direction: row;
         padding-left: 2rem;
         padding-right: 2rem;
@@ -64,7 +65,8 @@ height: 80px;
         }
     }
 
-    @media (min-width: 1080px){        
+    @media (min-width: 1080px){  
+            
         padding-left: 11.25rem;
         padding-right: 11.25rem;
         padding-top: 1rem;

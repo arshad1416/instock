@@ -15,7 +15,7 @@ class navbar extends Component {
                     <div className="navBar__navLink">
                         <ul className="navBar__navLink--nav">
                         <NavLink to="/inventory" className="navBar__navLink--nav-link" activeClassName="navBar__navLink--active"><li>Inventory</li></NavLink>                            
-                        <NavLink to="/warehouse" className="navBar__navLink--nav-link" activeClassName="navBar__navLink--active"><li>Locations</li></NavLink>
+                        <NavLink to="/warehouses" className="navBar__navLink--nav-link" activeClassName="navBar__navLink--active"><li>Locations</li></NavLink>
                         </ul>
                     </div>
                 </div>
