@@ -5,6 +5,8 @@ const app = express();
 const port = 8080;
 const host = `http://localhost:${port}`;
 
+
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

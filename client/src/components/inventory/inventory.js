@@ -10,16 +10,14 @@ class Inventory extends Component {
     componentDidMount(){
     axios.get('http://localhost:8080/inventory').then(res => {
         this.setState(() => ({inventory: res.data})); 
-    })};
+    })
+    console.log(this.state.inventory);
+    };
 
     render() {
-        return this.state.map(item =>(
-            <div>
-                <h2>Inventory</h2>
-                <input type="text" placeholder="Search"/>
-                <p>{item}</p>
-            </div>
-        ));
+        return (
+            
+        )
     }
 }
 
