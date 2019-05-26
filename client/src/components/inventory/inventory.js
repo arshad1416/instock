@@ -13,11 +13,19 @@ class Inventory extends Component {
     })};
 
     render() {
-        return this.state.map(item =>(
+        return this.state.inventory.map(item =>(
             <div>
-                <h2>Inventory</h2>
-                <input type="text" placeholder="Search"/>
-                <p>{item}</p>
+                <p>ITEM</p>
+                <p>{item.name}</p>
+                <p>{item.description}</p>
+                <p>LAST ORDERED</p>
+                <p>{item.lastOrdered}</p>
+                <p>LOCATION</p>
+                <p>{item.location}</p>
+                <p>QUANTITY</p>
+                <p>{item.quantity}</p>
+                <p>STATUS</p>
+                <p>{item.isInStock}</p>
             </div>
         ));
     }
