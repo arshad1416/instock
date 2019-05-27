@@ -18,3 +18,4 @@ app.use('/', inStockRoutes)
 app.listen(port, () => {
     console.log(`listening on ${host}`);
 })
+
