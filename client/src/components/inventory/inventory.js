@@ -1,12 +1,16 @@
-import React, {Component} from 'react';
-import './inventory.scss';
+import React, { Component } from 'react'
+import InventoryHeading from './inventoryHeading';
+import InventoryItem from './inventoryItem';
 
-class Inventory extends Component {
+class inventory extends Component {
     render() {
         return (
-            <h1>Inventory</h1>
-        );
+            <div>
+                <InventoryHeading />
+                <InventoryItem />
+            </div>
+        )
     }
 }
 
-export default Inventory;
+export default inventory

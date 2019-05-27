@@ -4,7 +4,7 @@ import './warehouses.scss';
 import WarehouseItem from '../WarehouseItem/WarehouseItem';
 import axios from 'axios';
 
-class Warehouse extends Component {
+class Warehouses extends Component {
     state = {
         warehouses: []
     };
@@ -56,4 +56,4 @@ class Warehouse extends Component {
     }
 }
 
-export default Warehouse;
+export default Warehouses
