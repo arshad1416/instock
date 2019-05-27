@@ -1,26 +1,175 @@
-@import '../../_mixins.scss';
-@import '../../_variable.scss';
+@import '../../mixins';
+@import '../../variable';
 
-h1 {
-    @include mobile-h1;
-}
-h2 {
-    @include mobile-h2;
-}
-h4 {
-    @include mobile-h4;
-}
-h5 {
-    @include mobile-h5;
-}
+.heading {
+    @include side-margin;
+    
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.inventory {
-    padding-top: 5rem;
-    margin: 0 1rem;
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        @include mobile-h1;
+        margin-top: 100px;
+
+        @include tablet {
+            @include desktop-tablet-h1;
+            margin-top: 120px;
+        }
+
+        @include desktop {
+            @include desktop-tablet-h1;
+            margin-top: 150px;
+        }
+    }
+
     &__search {
-        width: 13rem;
-        height: 2.5rem;
-        border-radius: 5px;
-        border: 1px solid $silver;
+        @include mobile-h4;
+        width: 250px;
+        height: 42px;
+        border: solid 1px $mercury;
+        border-radius: 4px;
+        background-image: url("../../assets/svg/Icon-search.svg");
+        background-repeat: no-repeat;
+        background-position: 0.5rem 50%;
+        text-indent: 2rem;
+        margin-bottom: 2rem;
+
+        @include tablet {
+            margin-top: 120px;
+        }
+
+        @include desktop {
+            margin-top: 150px;
+        }
+    }
+
+    &__label-wrap {
+        @include side-margin;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__label {
+        display: none;
+
+        @include tablet {
+            @include desktop-tablet-h4;
+            display: block;
+            color: $silver;
+        }
+
+        @include desktop {
+            @include desktop-tablet-h4;
+            display: block;
+            color: $silver;
+        }
+    }
+
+    &__label-item {
+        width: 200px;
+    }
+
+    &__label-specifics {
+        width: 160px;
+    }
+}
+
+.item {
+    @include side-margin;
+    border-bottom: solid 1px $mercury;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__label-button-wrap {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 0.25rem;
+    }
+
+    &__label {
+        @include mobile-h4;
+        font-family: $defaultFont-Demi;
+        color: $silver;
+        margin: 0 0 1rem 0;
+
+        @include tablet {
+            display: none;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__button-mobile {
+        @include tablet {
+            display: none;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__button-tablet {
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+
+        @include desktop {
+            display: block;
+        }
+    }
+
+    &__item-description-wrap {
+        @include tablet {
+            width: 171px;
+        }
+
+        @include desktop {
+            width: 171px;
+        }
+    }
+
+    &__name {
+        @include mobile-h2;
+        font-family: $defaultFont-Demi;
+        margin: 0 0 1rem 0;
+    }
+
+    &__info {
+        @include mobile-h4;
+        margin: 0 0 1.5rem 0;
+
+        @include tablet {
+            @include desktop-tablet-h4;
+            width: 137px;
+        }
+
+        @include desktop {
+            @include desktop-tablet-h4;
+            width: 137px;
+        }
+
     }
 }

@@ -9,6 +9,7 @@ const host = `http://localhost:${port}`;
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 app.use('/warehouses', inStockRoutes);
 app.use('/inventory', inStockRoutes);
@@ -19,3 +20,4 @@ app.use('/', inStockRoutes)
 app.listen(port, () => {
     console.log(`listening on ${host}`);
 })
+

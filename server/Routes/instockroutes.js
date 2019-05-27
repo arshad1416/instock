@@ -40,6 +40,30 @@ const createNewWarehouse = (req, res) => {
         res.status(400).json({error: 'The information provided is invalid or some information is missing.'});
     }
 };
+const createNewInvItem = (req, res) => {
+    const id = `I` + inventory.length;
+    const {name, description, quantity, lastOrdered, location, isInstock, categories, warehouseId} = req.body;
+    const newInvItem = {
+        id: id,
+        name,
+        description,
+        quantity,
+        lastOrdered,
+        location,
+        isInstock,
+        categories,
+        warehouseId
+    };
+    inventory.push(newInvItem);
+    res.json(newInvItem);
+    if (!newWarehouse)
+    {
+        res.status(400).json({error: 'The information provided is invalid or some information is missing.'});
+    }
+}
+
+
+
 
 const deleteItem = (req, res) => {
     inventory.forEach((item, index) => {
@@ -56,5 +80,6 @@ router.get('/inventory', getAllInventory);
 router.get('/warehouses', getAllWarehouses);
 router.post('/newwarehouses', createNewWarehouse);
 router.delete('/inventory/delete/:id', deleteItem);
+router.post('/inventory', createNewInvItem);
 
 module.exports = router;

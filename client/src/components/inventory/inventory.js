@@ -1,24 +1,16 @@
-import React, {Component} from 'react';
-import './inventory.scss';
-import axios from 'axios';
+import React, { Component } from 'react'
+import InventoryHeading from './inventoryHeading';
+import InventoryItem from './inventoryItem';
 
-class Inventory extends Component {
-    state= {
-        inventory: []
-    };
-
-    componentDidMount(){
-    axios.get('http://localhost:8080/inventory').then(res => {
-        this.setState(() => ({inventory: res.data})); 
-    })
-    console.log(this.state.inventory);
-    };
-
+class inventory extends Component {
     render() {
         return (
-            
+            <div>
+                <InventoryHeading />
+                <InventoryItem />
+            </div>
         )
     }
 }
 
-export default Inventory;
+export default inventory
