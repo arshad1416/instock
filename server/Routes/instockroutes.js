@@ -65,11 +65,21 @@ const createNewInvItem = (req, res) => {
 
 
 
+const deleteItem = (req, res) => {
+    inventory.forEach((item, index) => {
+        if (item.id === req.params.id){
+            inventory.splice(index, 1);
+            res.send("Item deleted");
+        }
+    })
+}
+
 router.get('/warehouses/:id/inventory', showInvById)
 router.get('/inventory/:id', getSingleInventory);
 router.get('/inventory', getAllInventory);
 router.get('/warehouses', getAllWarehouses);
 router.post('/newwarehouses', createNewWarehouse);
+router.delete('/inventory/delete/:id', deleteItem);
 router.post('/inventory', createNewInvItem);
 
 module.exports = router;
