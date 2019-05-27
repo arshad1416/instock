@@ -94,7 +94,7 @@
 
     @include desktop {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
     }
 
@@ -147,7 +147,7 @@
         }
 
         @include desktop {
-            width: 171px;
+            width: 255px;
         }
     }
 
@@ -168,8 +168,20 @@
 
         @include desktop {
             @include desktop-tablet-h4;
-            width: 137px;
+            width: 171px;
         }
 
+    }
+
+    &__info-desktop {
+        @include desktop {
+            width: 222px;
+        }
+    }
+
+    &__info-status {
+        @include desktop {
+            width: 140px;
+        }
     }
 }
