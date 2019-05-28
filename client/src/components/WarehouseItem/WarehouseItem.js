@@ -31,11 +31,7 @@ class WarehouseItem extends Component {
                         <div className="warehouseItem__email">{this.props.email}</div>
                     </div>
                     <div className="warehouseItem__categories">{this.props.categories}</div>
-<<<<<<< HEAD
-                    <button className="warehouseItem__button2"><img src={rightArrow} alt="button2"/></button>
-=======
                     <Link to={'/warehouses/' + this.props.id +'/inventory'} ><button className="warehouseItem__button2"><img src={rightArrow} alt="inventory"/></button></Link>
->>>>>>> develop
                 </div>
                 </div>
             </section>
