@@ -1,20 +1,11 @@
 import React, {Component} from 'react';
 import './inventory.scss';
-import axios from 'axios';
 import kebab from '../../assets/svg/Icon-kebab-default.svg';
 
 class InventoryItem extends Component {
-    state= {
-        inventory: []
-    };
-
-    componentDidMount(){
-    axios.get('http://localhost:8080/inventory').then(res => {
-        this.setState(() => ({inventory: res.data})); 
-    })};
-
+    
     render() {
-        return this.state.inventory.map(item =>(
+        return this.props.inventory.map(item =>(
             <div className="item">
                 <div className="item__label-button-wrap">
                     <h4 className="item__label">ITEM</h4>
