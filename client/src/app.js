@@ -4,6 +4,7 @@ import Main from './components/main/main';
 import Navbar from './components/navbar/navbar';
 import Warehouses from './components/warehouses/warehouses';
 import Inventory from './components/inventory/inventory';
+import Details from './components/inventory/details';
 import WarehouseInventory from './components/inventory/warehouse-inventory';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Error from './components/error/error';
@@ -16,10 +17,10 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Main} />
             <Route exact path="/warehouses" component={Warehouses} />
-            <Route path="/inventory" component={Inventory} />
+            <Route exact path="/inventory" component={Inventory} />
             <Route exact path="/warehouses/:id" component={Warehouses} />
             <Route path="/warehouses/:id/inventory" component={WarehouseInventory} />
-            <Route path="/inventory/:id" component={Inventory} />
+            <Route path="/inventory/:id" component={Details} />
             <Route component={Error} />
           </Switch>
       </BrowserRouter>

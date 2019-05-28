@@ -1,6 +1,10 @@
 @import '../../mixins';
 @import '../../variable';
 
+a {
+    text-decoration: none;
+}
+
 .heading {
     @include side-margin;
     

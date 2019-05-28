@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './inventory.scss';
 import kebab from '../../assets/svg/Icon-kebab-default.svg';
+import {Link} from 'react-router-dom';
 
 class InventoryItem extends Component {
     
@@ -12,7 +13,7 @@ class InventoryItem extends Component {
                     <img className="item__button-mobile" src={kebab} alt="remove-button"/>
                 </div>
                 <div className="item__item-description-wrap">
-                    <p className="item__name">{item.name}</p>
+                    <Link to={`/inventory/${item.id}`} ><p className="item__name">{item.name}</p></Link>
                     <p className="item__info">{item.description}</p>
                 </div>
                 <h4 className="item__label">LAST ORDERED</h4>

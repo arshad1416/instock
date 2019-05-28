@@ -1,0 +1,9 @@
+@import '../../_mixins.scss';
+
+
+.info {
+    margin-top: 6rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @include mobile-h2;
+}
