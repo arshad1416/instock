@@ -6,13 +6,14 @@ import './details.scss';
 class Details extends Component {
 
     state = {
-        id:''
+        id:'',
+        itemInfo: {}
     }
 
     componentDidMount(){
         axios.get(`http://localhost:8080/inventory/${this.props.match.params.id}`)
             .then(res=>
-                this.setState({itemInfo: res})
+                this.setState({itemInfo: res.data})
                 )
             .catch(err=> 
                 console.log(err)
@@ -20,9 +21,9 @@ class Details extends Component {
     }
 
     render(){
-
         return (
-            <div className="info">   
+            <div className="info">
+                <h1>{this.state.itemInfo.name}</h1>
                 <ItemInfo itemInfo={this.state.itemInfo}/>
             </div>
             

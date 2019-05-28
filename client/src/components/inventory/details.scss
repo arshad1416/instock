@@ -1,4 +1,5 @@
 @import '../../_mixins.scss';
+@import '../../_variable.scss';
 
 
 .info {
@@ -6,4 +7,9 @@
     margin-left: 1rem;
     margin-right: 1rem;
     @include mobile-h2;
+
+    &__card-label {
+        color: $textLabel;
+        display: block;
+    }
 }
