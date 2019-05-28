@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
-import './warehousemodal.scss';
 
 class Warehousemodal extends Component {
+
+    state = { show: false };
+
+    
     render() {
         return (
             <main className="warehouseModal">
