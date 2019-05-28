@@ -74,6 +74,7 @@
 
     &__label-item {
         width: 200px;
+        margin-left: 4px;
     }
 
     &__label-specifics {
@@ -168,14 +169,15 @@
 
         @include desktop {
             @include desktop-tablet-h4;
-            width: 171px;
+            width: 220px;
         }
 
     }
 
     &__info-desktop {
         @include desktop {
-            width: 222px;
+            width: 218px;
+            padding-left: 2px;
         }
     }
 
