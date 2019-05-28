@@ -35,6 +35,7 @@ class Warehouses extends Component {
                         <WarehouseItem 
                                 index={index}
                                 key={id}
+                                id={id}
                                 name={name}
                                 street={street}
                                 suiteNum={suiteNum}
