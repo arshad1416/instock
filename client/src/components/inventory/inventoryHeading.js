@@ -6,7 +6,7 @@ class InventoryHeading extends Component {
         return (
             <>
             <div className="heading">
-                <h1 className="heading__title">Inventory</h1>
+                <h1 className="heading__title">{this.props.warehouseId ? `Inventory at ${this.props.warehouseId}` : 'Inventory'}</h1>
                 <input className="heading__search" type="text" placeholder="Search"/>
             </div>
             <div className="heading__label-wrap">
