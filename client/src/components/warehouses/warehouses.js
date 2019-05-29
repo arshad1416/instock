@@ -3,11 +3,21 @@ import searchIcon from '../../assets/svg/Icon-search.svg';
 import './warehouses.scss';
 import WarehouseItem from '../WarehouseItem/WarehouseItem';
 import axios from 'axios';
+import addIcon from '../../assets/svg/Icon-add.svg';
+import Warehousemodal from '../warehousemodal/warehousemodal';
 
 class Warehouses extends Component {
     state = {
-        warehouses: []
+        warehouses: [], 
+        isOpen: false
     };
+
+    toggleModal = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+    
     componentDidMount(){
         axios.get('http://localhost:8080/warehouses')
             .then( response => {
@@ -15,8 +25,8 @@ class Warehouses extends Component {
                 console.log(this.state.warehouses)
         }) 
     }
+
     render() {
-        
         return (
             <section className="locations">
                 <div className="locations__header--tablet">
@@ -47,12 +57,16 @@ class Warehouses extends Component {
                                 phone={phone}
                                 email={email}
                                 categories={inventoryCategories}></WarehouseItem>)
-
                     })}
                 </section>
-            
+                    <button className="warehouse__addButton" type="button"
+                        onClick={this.toggleModal}
+                    >
+                        <img src={addIcon} alt="Plus Sign" className="warehouse__plusSign" />
+                    </button>
+                    <Warehousemodal show={this.state.isOpen}
+                    onClose={this.toggleModal}>Test</Warehousemodal>
             </section>
-               
         );
     }
 }

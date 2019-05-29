@@ -66,3 +66,42 @@
 .warehouse-items > *{
     border-bottom: solid 1px $textFieldBorder;
 }
+
+.warehouse {
+    &__addButton {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $instock-blue;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+
+        &:active {
+            background-color: $instock-blue-dark;
+        }
+
+        @include tablet {
+            right: 100px;
+            bottom: 100px;
+        }
+
+        @include desktop {
+            right: 200px;
+            bottom: 200px;
+            height: 80px;
+            width: 80px;
+        }
+    }
+
+    &__plusSign {
+        height: 20px;
+
+        @include desktop {
+            height: 24px;
+        }
+    }
+}
