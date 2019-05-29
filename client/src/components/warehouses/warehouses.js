@@ -9,12 +9,14 @@ import Warehousemodal from '../warehousemodal/warehousemodal';
 class Warehouses extends Component {
     state = {
         warehouses: [], 
-        isOpen: false
+        isOpen: false,
+        hideLocations: false
     };
 
     toggleModal = () => {
         this.setState({
-            isOpen: !this.state.isOpen
+            isOpen: !this.state.isOpen,
+            hideLocations: !this.state.hideLocations
         });
     }
     
@@ -27,8 +29,12 @@ class Warehouses extends Component {
     }
 
     render() {
+        const style = this.state.hideLocations ? {display: 'none'} : {};
+
         return (
-            <section className="locations">
+            <>
+            <Warehousemodal show={this.state.isOpen} onClose={this.toggleModal} />
+            <section className="locations" style = {style}>
                 <div className="locations__header--tablet">
                     <h1 className="locations__header">Locations</h1>
                     <form className="locations__search-container">
@@ -64,9 +70,8 @@ class Warehouses extends Component {
                     >
                         <img src={addIcon} alt="Plus Sign" className="warehouse__plusSign" />
                     </button>
-                    <Warehousemodal show={this.state.isOpen}
-                    onClose={this.toggleModal}>Test</Warehousemodal>
             </section>
+            </>
         );
     }
 }
