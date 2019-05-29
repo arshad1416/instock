@@ -17,11 +17,11 @@ class InventoryItem extends Component {
                     <p className="item__info">{item.description}</p>
                 </div>
                 <h4 className="item__label">LAST ORDERED</h4>
-                <p className="item__info item__info-desktop">{item.lastOrdered}</p>
+                <p className="item__info last item__info-desktop">{item.lastOrdered}</p>
                 <h4 className="item__label">LOCATION</h4>
-                <p className="item__info item__info-desktop">{item.location}</p>
+                <p className="item__info loc item__info-desktop">{item.location}</p>
                 <h4 className="item__label">QUANTITY</h4>
-                <p className="item__info item__info-desktop">{item.quantity}</p>
+                <p className="item__info qua item__info-desktop">{item.quantity}</p>
                 <h4 className="item__label">STATUS</h4>
                 <p className="item__info item__info-status">{item.isInstock ? 'In Stock': 'Out of Stock'}</p>
                 <img className="item__button-tablet" src={kebab} alt="remove button"/>

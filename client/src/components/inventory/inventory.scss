@@ -43,9 +43,20 @@ a {
         margin-bottom: 2rem;
         border: solid 1px $textFieldBorder;
         border-radius: 0.25rem;
+        @media (min-width: 321px){
+            width: 100%;
+            
+        }
         @media (min-width: 768px){
             margin-bottom: 0;
             margin-right: 1.5rem;
+            width: 219px;
+        }
+        
+        @media (min-width: 820px){
+            width: 40vw;
+        }
+        @media (min-width: 1024px){
             width: 219px;
         }
         &:focus{
@@ -93,6 +104,15 @@ a {
         @include side-margin;
         display: flex;
         justify-content: space-between;
+        @media (min-width: 768px){
+            width: 720px;
+        }
+        @media (min-width: 1024px){
+            width: 664px;
+        }
+        @media (min-width: 1440px){
+            width: 1080px;
+        }
     }
 
     &__label {
@@ -127,12 +147,19 @@ a {
     margin-bottom: 1.5rem;
 
     @include tablet {
+        width: 720px;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
     }
-
+    @media (min-width: 1024px){
+        width: 664px;
+    }
+    @media (min-width: 1440px){
+        width: 1080px;
+    }
     @include desktop {
+        // width: 1024px;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
