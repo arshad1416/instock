@@ -7,7 +7,7 @@ function ItemInfo(props) {
                 <span className="info__card-description-label info__card-label">
                     ITEM DESCRIPTION
                 </span>
-                <span className="info__card-descripton-text">
+                <span className="info__card-descripton-text info__card-text">
                     {props.itemInfo.description}
                 </span>
             </div>
@@ -16,15 +16,15 @@ function ItemInfo(props) {
                     <span className="info__card-details-ordby-label info__card-label">
                         ORDERED BY
                     </span>
-                    <span className="info__card-details-ordby-text">
-                        {props.itemInfo.description}
+                    <span className="info__card-details-ordby-text info__card-text">
+                        David Runyon
                     </span>
                 </div>
                 <div className="info__card-details-ref">
                     <span className="info__card-details-ref-label info__card-label">
                         REFERENCE NUMBER
                     </span>
-                    <span className="info__card-details-ref-text">
+                    <span className="info__card-details-ref-text info__card-text">
                         {props.itemInfo.id}
                     </span>
                 </div>
@@ -32,7 +32,7 @@ function ItemInfo(props) {
                     <span className="info__card-details-ordlast-label info__card-label">
                         LAST ORDERED
                     </span>
-                    <span className="info__card-details-ordlast-text">
+                    <span className="info__card-details-ordlast-text info__card-text">
                         {props.itemInfo.lastOrdered}
                     </span>
                 </div>
@@ -40,7 +40,7 @@ function ItemInfo(props) {
                     <span className="info__card-details-loc-label info__card-label">
                         LOCATION
                     </span>
-                    <span className="info__card-details-loc-text">
+                    <span className="info__card-details-loc-text info__card-text">
                         {props.itemInfo.location}
                     </span>
                 </div>
@@ -48,7 +48,7 @@ function ItemInfo(props) {
                     <span className="info__card-details-quant-label info__card-label">
                         QUANTITY
                     </span>
-                    <span className="info__card-details-quant-text">
+                    <span className="info__card-details-quant-text info__card-text">
                         {props.itemInfo.quantity}
                     </span>
                 </div>
@@ -56,7 +56,7 @@ function ItemInfo(props) {
                     <span className="info__card-details-cat-label info__card-label">
                         CATEGORIES
                     </span>
-                    <span className="info__card-details-cat-text">
+                    <span className="info__card-details-cat-text info__card-text">
                         {props.itemInfo.categories}
                     </span>
                 </div>

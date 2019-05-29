@@ -1,15 +1,107 @@
-@import '../../_mixins.scss';
-@import '../../_variable.scss';
+@import '../../mixins';
+@import '../../variable';
 
+a{
+    height: unset;
+}
 
 .info {
     margin-top: 6rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    @include mobile-h2;
+    @include side-margin;
+    @media (min-width: 600px) {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+    @media (min-width: 1080px) {
+        margin-left: 11.25rem;
+        margin-right: 11.25rem;
+    }
+
+    &__card {
+        margin-bottom: 2.5rem;
+    }
+    
+    &__header {
+        margin-bottom: 2rem;
+        @include tablet {
+            display: flex;
+
+        }
+        &-h1 {
+            display: flex;
+            @include tablet {
+                margin-right: 2rem;
+    
+            }
+        }
+        //display: inline-block;
+    }
+    &__status {
+        width: 5.5rem;
+        height: 1.5rem;
+        color: white;
+        font-size: .8rem;
+        text-align: center;
+        line-height: 1.5rem;
+        border-radius: 5px;
+        display: inline-block;
+        @include tablet {
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
+        
+        
+        &-in {
+            background-color: green;
+        }
+        &-out {
+            background-color: maroon;
+        }
+    }
+    
+    &__header-back {
+        vertical-align: text-bottom;
+        margin-right: 1rem;
+        margin-top: .8rem;
+    }
+    &__header-text {
+        @include mobile-h1();
+        line-height: 1.5rem;
+        
+
+    }
+
+    &__card-description {
+        margin-bottom: 2rem;
+    }
 
     &__card-label {
+        @include mobile-h4;
+        font-family: $defaultFont-Demi;
+        font-weight: bold;
         color: $textLabel;
         display: block;
+        margin-bottom: 1rem;
+    }
+    &__card-text {
+        @include mobile-h4;
+        font-family: $defaultFont-Demi;
+        color: $black;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+    &__btn-row {
+        display: flex;
+        justify-content: center;
+        &-button{
+            width: 18rem;
+            height: 3rem;
+            color: white;
+            font-weight: bold;
+            background-color: $instock-blue;
+            border: none;
+            border-radius: 5px;
+        }
     }
 }

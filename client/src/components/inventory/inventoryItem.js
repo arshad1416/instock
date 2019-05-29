@@ -23,7 +23,7 @@ class InventoryItem extends Component {
                 <h4 className="item__label">QUANTITY</h4>
                 <p className="item__info item__info-desktop">{item.quantity}</p>
                 <h4 className="item__label">STATUS</h4>
-                <p className="item__info item__info-status">{/*item.isInStock*/}In Stock</p>
+                <p className="item__info item__info-status">{item.isInstock ? 'In Stock': 'Out of Stock'}</p>
                 <img className="item__button-tablet" src={kebab} alt="remove button"/>
             </div>
         ));
