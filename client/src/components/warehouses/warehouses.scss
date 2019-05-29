@@ -1,7 +1,13 @@
 @import '../../_mixins';
 @import '../../variable';
 .locations{
-
+    margin-top: 100px;
+    @media (min-width: 768px){
+        margin-top: 117px;
+    }
+    @media (min-width: 1440px){
+        margin-top: 147px;
+    }
     @include side-margin();
     &__header{
         margin-top: 2rem;
