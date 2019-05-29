@@ -17,10 +17,10 @@ class InventoryHeading extends Component {
             </div>
             <div className="heading__label-wrap">
                 <h4 className="heading__label heading__label-item">ITEM</h4> 
-                <h4 className="heading__label heading__label-specifics">LAST ORDERED</h4>
-                <h4 className="heading__label heading__label-specifics">LOCATION</h4>
-                <h4 className="heading__label heading__label-specifics">QUANTITY</h4>
-                <h4 className="heading__label heading__label-specifics">STATUS</h4>
+                <h4 className="heading__label heading__label-specifics last">LAST ORDERED</h4>
+                <h4 className="heading__label heading__label-specifics loc">LOCATION</h4>
+                <h4 className="heading__label heading__label-specifics qua">QUANTITY</h4>
+                <h4 className="heading__label heading__label-specifics stat">STATUS</h4>
             </div>
             </>
         )
