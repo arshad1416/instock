@@ -10,13 +10,15 @@ class Warehouses extends Component {
     state = {
         warehouses: [], 
         isOpen: false,
-        hideLocations: false
+        hideLocations: false,
+        clicked: false
     };
 
     toggleModal = () => {
         this.setState({
             isOpen: !this.state.isOpen,
-            hideLocations: !this.state.hideLocations
+            hideLocations: !this.state.hideLocations,
+            clicked: true
         });
     }
     
@@ -26,6 +28,14 @@ class Warehouses extends Component {
                 this.setState({warehouses: response.data})
                 console.log(this.state.warehouses)
         }) 
+    }
+
+    componentDidUpdate() {
+        if(this.state.clicked){
+            if(window.innerWidth>767){
+                this.setState({hideLocations:false, clicked:false})
+            }
+        }
     }
 
     render() {
