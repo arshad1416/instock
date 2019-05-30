@@ -63,9 +63,6 @@ const createNewInvItem = (req, res) => {
     }
 }
 
-
-
-
 const deleteItem = (req, res) => {
     inventory.forEach((item, index) => {
         if (item.id === req.params.id){
