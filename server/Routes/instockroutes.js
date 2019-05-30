@@ -18,7 +18,7 @@ const getAllInventory = (req, res) => {
 }
 
 const getSingleInventory = (req, res) => {
-    const foundInv = getInv.find(inv => inv.id === req.params.id);
+    const foundInv = inventory.find(inv => inv.id === req.params.id);
 
     if(!foundInv)
     {
