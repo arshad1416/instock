@@ -6,7 +6,7 @@ const uuidv1 = require('uuid/v1');
 
 class InventoryItem extends Component {
     state= {
-        inventory: []                
+        inventory: [],                      
     };
 
     componentDidMount(){    
@@ -32,10 +32,10 @@ class InventoryItem extends Component {
                  console.log(error);
              })                            
     }
-   
-    render() {
-        return this.state.inventory.map((item)=>(
-            <InventoryItemList key={uuidv1()} item={item} Click={this.delete} />
+
+    render() {        
+        return this.state.inventory.map((item)=>(            
+            <InventoryItemList key={uuidv1()} item={item} activeKebobId={this.props.activeKebobId} disable={this.props.disable} handleKebob={this.props.handleKebob} Delete={this.delete} clickOut={this.props.clickOutside}/>
         ));
     }
 }
