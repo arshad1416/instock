@@ -185,3 +185,21 @@
         }
     }
 }
+
+.button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $instock-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 400px;
+    right: 20px;
+
+    &__logo {
+        width: 20px;
+    }
+}
+
