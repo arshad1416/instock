@@ -12,7 +12,9 @@ function ItemInfo(props) {
                 </span>
             </div>
             <div className="info__card-details">
-                <div className="info__card-details-ordby">
+                <div className="info__card-row1">
+                    
+                <div className="info__card-details-ordby info__card-details-block">
                     <span className="info__card-details-ordby-label info__card-label">
                         ORDERED BY
                     </span>
@@ -20,7 +22,7 @@ function ItemInfo(props) {
                         David Runyon
                     </span>
                 </div>
-                <div className="info__card-details-ref">
+                <div className="info__card-details-ref info__card-details-block">
                     <span className="info__card-details-ref-label info__card-label">
                         REFERENCE NUMBER
                     </span>
@@ -28,7 +30,10 @@ function ItemInfo(props) {
                         {props.itemInfo.id}
                     </span>
                 </div>
-                <div className="info__card-details-ordlast">
+                </div>
+                <div className="info__card-row2">
+
+                <div className="info__card-details-ordlast info__card-details-block">
                     <span className="info__card-details-ordlast-label info__card-label">
                         LAST ORDERED
                     </span>
@@ -36,7 +41,7 @@ function ItemInfo(props) {
                         {props.itemInfo.lastOrdered}
                     </span>
                 </div>
-                <div className="info__card-details-loc">
+                <div className="info__card-details-loc info__card-details-block">
                     <span className="info__card-details-loc-label info__card-label">
                         LOCATION
                     </span>
@@ -44,7 +49,8 @@ function ItemInfo(props) {
                         {props.itemInfo.location}
                     </span>
                 </div>
-                <div className="info__card-details-quant">
+                </div>
+                <div className="info__card-details-quant info__card-details-block">
                     <span className="info__card-details-quant-label info__card-label">
                         QUANTITY
                     </span>
