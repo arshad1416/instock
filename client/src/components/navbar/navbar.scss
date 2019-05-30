@@ -3,7 +3,7 @@
 .navBar{
 position: fixed;
 top: 0;
-background-color: #000000;
+background-color: $black;
 display: flex;
 flex-direction: column;
 width: 100%;
@@ -84,7 +84,4 @@ height: 80px;
             }
         }
     }
-
-
-
 }

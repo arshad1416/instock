@@ -136,3 +136,14 @@
         padding-right: 180px;
     }
 }
+
+@mixin input {
+    height: 3rem;
+    width: 18rem;
+    padding: 0;
+    @include mobile-h2;
+    text-indent: 1rem;
+    border: 1px $textFieldBorder solid;
+    background-color: $textFieldBackground;
+    border-radius: 2px;
+}
