@@ -14,7 +14,8 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "^3.0.1",
     "react-switch": "^5.0.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "shortid": "^2.2.14"
   },
   "scripts": {
     "start": "react-scripts start",
