@@ -1,49 +1,61 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
+<<<<<<< HEAD
 import './warehousemodal.scss';
+=======
+import shortid from 'shortid';
+import '../warehousemodal/warehousemodal.scss';
+>>>>>>> develop
 
 class Warehousemodal extends Component {
 
     state ={
+        id: '',
         name:'',
-        address:'',
-        city:'',
-        province: 'Ontario',
-        contactName:'',
-        position:'',
-        phone:'',
-        email:'',
+        address:{
+            street: '', 
+            suiteNum:'', 
+            city:'', 
+            province: 'Ontario',
+            postal:''},
+        contact: {
+            name:'',
+            title:'',
+            phone:'',
+            email:''
+        },
         inventoryCategories:''
     }
 
-    newWarehouse = () => {
-        const name = this.state.name;
-        const address = this.state.address.street;
-        const city = this.state.address.city;
-        const province = this.state.address.province;
-        const contactName = this.state.contact.name;
-        const position = this.state.contact.title;
-        const phone = this.state.contact.phone;
-        const email = this.state.contact.email;
-        const inventoryCategories = this.state.inventoryCategories;
-
-    Axios
-        .post(`http://localhost:8080/videos/upload`, {name, address, city, province, contactName, position, phone, email, inventoryCategories})
-        .then(res => {
-            console.log(res);
-            console.log(res.data);
-        })
+    componentDidUpdate () {
+        
     }
 
     handleSubmit = (event) => {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
+        event.preventDefault ();
 
-        this.setState({
-            [name]: value
-        });
-    }
+        const formData = {
+            id: shortid.generate(),
+            name: event.target.name.value,
+            address:{
+                street: event.target.address.value, 
+                city: event.target.city.value, 
+                province: 'Ontario'},
+            contact: {
+                name: event.target.contactName.value,
+                title: event.target.position.value,
+                phone: event.target.phone.value,
+                email: event.target.email.value
+            },
+            inventoryCategories: event.target.inventoryCategories.value
+        };
+
+        Axios
+            .post (`http://localhost:8080/newwarehouses`, formData)
+            .then ((response) => {
+                console.log(response);
+            })
+        };
 
     render() {
 
@@ -54,7 +66,7 @@ class Warehousemodal extends Component {
         return (
             <main className="background">
                 <section className="warehouseModal warehouseModal__backDrop">
-                    <form className="warehouseModal__form" onClick={this.handleSubmit} >
+                    <form className="warehouseModal__form" onSubmit={this.handleSubmit}>
                         <h1 className="warehouseModal__title">
                             Add New
                         </h1>
@@ -62,20 +74,20 @@ class Warehousemodal extends Component {
                             <h2 className="warehouseModal__fieldTitle" htmlFor="warehouse">
                                 warehouse
                             </h2>
-                            <input type="text" className="warehouseModal__field" name="warehouse" placeholder="Name & ID" required value={this.state.name} onClick={this.handleSubmit} />
+                            <input type="text" className="warehouseModal__field" name="name" placeholder="Name & ID" required />
                         </section>
                         <div className="warehouseModal__tabletMode">
                             <section className="warehouseModal__spacing warehouseModal__address warehouseModal__marginRight">
                                 <h2 className="warehouseModal__fieldTitle" htmlFor="address">
                                     address
                                 </h2>
-                                <input type="text" className="warehouseModal__field" name="address" placeholder="Enter Address" required value={this.state.address} onClick={this.handleSubmit}/>
+                                <input type="text" className="warehouseModal__field" name="address" placeholder="Enter Address" required/>
                             </section>
                             <section className="warehouseModal__spacing warehouseModal__location">
                                 <h2 className="warehouseModal__fieldTitle" htmlFor="location">
                                     location
                                 </h2>
-                                <select className="warehouseModal__field warehouseModal__dropDown" name="location" value={this.state.city} onClick={this.handleSubmit}>
+                                <select className="warehouseModal__field warehouseModal__dropDown" name="city">
                                     <option value="Toronto">Toronto, ON</option>
                                     <option value="Mississauga">Mississauga, ON</option>
                                     <option value="Brampton">Brampton, ON</option>
@@ -89,13 +101,13 @@ class Warehousemodal extends Component {
                                 <h2 className="warehouseModal__fieldTitle" htmlFor="contactName">
                                     contact name
                                 </h2>
-                                <input type="text" className="warehouseModal__field" name="contactName" placeholder="Enter Name" required value={this.state.contactName} onClick={this.handleSubmit}/>
+                                <input type="text" className="warehouseModal__field" name="contactName" placeholder="Enter Name" required/>
                             </section>
                             <section className="warehouseModal__spacing warehouseModal__position">
                                 <h2 className="warehouseModal__fieldTitle" htmlFor="position">
                                     position
                                 </h2>
-                                <input type="text" className="warehouseModal__field" name="position" placeholder="Enter Position" required value={this.state.title} onClick={this.handleSubmit}/>
+                                <input type="text" className="warehouseModal__field" name="position" placeholder="Enter Position" required/>
                             </section>
                         </div>
                         <div className="warehouseModal__tabletMode">
@@ -103,23 +115,23 @@ class Warehousemodal extends Component {
                                 <h2 className="warehouseModal__fieldTitle" htmlFor="phoneNumber">
                                     phone number
                                 </h2>
-                                <input type="tel" className="warehouseModal__field" name="phoneNumber" placeholder="(000) 000 - 0000" required value={this.state.phone} onClick={this.handleSubmit}/>
+                                <input type="tel" className="warehouseModal__field" name="phone" placeholder="(000) 000 - 0000" required/>
                             </section>
                             <section className="warehouseModal__spacing warehouseModal__email">
                                 <h2 className="warehouseModal__fieldTitle" htmlFor="email">
                                     email
                                 </h2>
-                                <input type="email" className="warehouseModal__field" name="email" placeholder="email@instock.com" required value={this.state.email} onClick={this.handleSubmit} />
+                                <input type="email" className="warehouseModal__field" name="email" placeholder="email@instock.com" required />
                             </section>
                         </div>
                         <section className="warehouseModal__spacing warehouseModal__itemDescription">
                             <h2 className="warehouseModal__fieldTitle" htmlFor="itemDescription">
                                 item description
                             </h2>
-                            <textarea type="text" className="warehouseModal__field warehouseModal__textArea" name="itemDescription" placeholder="Use commas to separate each category" required value={this.state.inventoryCategories} onClick={this.handleSubmit}/>
+                            <textarea type="text" className="warehouseModal__field warehouseModal__textArea" name="inventoryCategories" placeholder="Use commas to separate each category" required/>
                         </section>
                         <section className="warehouseModal__buttons">
-                            <button className="warehouseModal__buttonSave" onClick={this.handleSubmit}>
+                            <button className="warehouseModal__buttonSave">
                                 save
                             </button>
                             <button className="warehouseModal__buttonCancel" onClick={this.props.onClose}>

@@ -18,7 +18,7 @@ const getAllInventory = (req, res) => {
 }
 
 const getSingleInventory = (req, res) => {
-    const foundInv = getInv.find(inv => inv.id === req.params.id);
+    const foundInv = inventory.find(inv => inv.id === req.params.id);
 
     if(!foundInv)
     {
@@ -29,6 +29,7 @@ const getSingleInventory = (req, res) => {
 }
 
 const createNewWarehouse = (req, res) => {
+    console.log(req.body)
     const newWarehouse = {
         ...req.body
     }
@@ -71,6 +72,7 @@ const deleteItem = (req, res) => {
         }
     })
 }
+
 
 router.get('/warehouses/:id/inventory', showInvById)
 router.get('/inventory/:id', getSingleInventory);
