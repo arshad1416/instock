@@ -9,22 +9,37 @@ class inventory extends Component {
         disable: false,
     }
 
-
-    handleOutsideClick = (event) => {                    
-        this.setState({
-            display: event.target.className.includes("item__button-") ? true : false            
-        });        
+    handleOutsideClick = (event) => {         
+        if(event.target.className.includes("item__button-"))
+        {            
+            this.setState({display: true});
+        }
+        else
+        {
+            this.setState({display: false, id:'', disable:false});
+        }               
     }
 
-    handleKebob = (event) => {        
-        this.setState({
-            id: event.target.id, 
-            disable: !this.state.disable,            
-        });                       
+    handleKebob = (event) => {                
+        if(!this.state.disable)
+        {
+            this.setState({
+                id: event.target.id, 
+                disable: true, 
+                display: true           
+            });
+        }  
+        else{
+            this.setState({
+                id: '', 
+                disable: false,  
+                display: false          
+            });            
+        }    
+                              
     }
 
-
-    render() {        
+    render() {          
         return (
             <div onClick={this.handleOutsideClick} >
                 <InventoryHeading />
