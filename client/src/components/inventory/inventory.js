@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import InventoryHeading from './inventoryHeading';
 import InventoryItem from './inventoryItem';
+import axios from 'axios';
 
 class inventory extends Component {
     state = {

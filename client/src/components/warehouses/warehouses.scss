@@ -1,7 +1,15 @@
 @import '../../_mixins';
 @import '../../variable';
-.locations{
 
+
+.locations{
+    margin-top: 100px;
+    @media (min-width: 768px){
+        margin-top: 117px;
+    }
+    @media (min-width: 1440px){
+        margin-top: 147px;
+    }
     @include side-margin();
     &__header{
         margin-top: 2rem;
@@ -30,9 +38,19 @@
         margin-bottom: 2rem;
         border: solid 1px $textFieldBorder;
         border-radius: 0.25rem;
+        @media (min-width: 321px){
+            width: 100%;
+            
+        }
         @media (min-width: 768px){
             margin-bottom: 0;
             margin-right: 1.5rem;
+            width: 219px;
+        }
+        @media (min-width: 820px){
+            width: 40vw;
+        }
+        @media (min-width: 1024px){
             width: 219px;
         }
         &:focus{
@@ -65,4 +83,43 @@
 }
 .warehouse-items > *{
     border-bottom: solid 1px $textFieldBorder;
+}
+
+.warehouse {
+    &__addButton {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $instock-blue;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+
+        &:active {
+            background-color: $instock-blue-dark;
+        }
+
+        @include tablet {
+            right: 100px;
+            bottom: 100px;
+        }
+
+        @include desktop {
+            right: 200px;
+            bottom: 200px;
+            height: 80px;
+            width: 80px;
+        }
+    }
+
+    &__plusSign {
+        height: 20px;
+
+        @include desktop {
+            height: 24px;
+        }
+    }
 }

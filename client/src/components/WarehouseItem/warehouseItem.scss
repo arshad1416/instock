@@ -17,7 +17,8 @@
         display: none;
         @media (min-width: 1440px){
             display: flex;
-            @include desktop-tablet-h5();
+            @include desktop-tablet-h4(); 
+            color: $textLabel;
             &__warehouse{
                 padding-left: 0.5rem;
                 width: 276px;
@@ -41,7 +42,7 @@
         @include mobile-h2();
         margin-bottom: 0.5rem;
         @media (min-width: 768px){
-            @include desktop-tablet-h3();
+            @include desktop-tablet-h4();
             padding-left: 0.5rem;
         }
         @media (min-width: 1440px){
@@ -69,11 +70,19 @@
             bottom: 10px;
             padding-left: 0.5rem;
         }
+        @media (min-width: 1440px){
+            bottom: 8px;
+        }
         
     }
     &__button{
         height: 18px;
         margin-top: 0.6rem;
+        background: none;
+        border: none;
+        &:focus {
+            outline: none;
+        }
         @media (min-width: 768px){
             margin-top: 1.5rem;
         }
@@ -139,12 +148,15 @@
     }
     &:last-child{
         border-bottom: none;
-      
-        
-
     }
+    
     &__button2{
         display: none;
+        background: none;
+        border: none;
+        &:focus {
+            outline: none;
+        }
         @media(min-width:1440px){
             display:flex;
             align-self: center;

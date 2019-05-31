@@ -18,7 +18,7 @@ const getAllInventory = (req, res) => {
 }
 
 const getSingleInventory = (req, res) => {
-    const foundInv = getInv.find(inv => inv.id === req.params.id);
+    const foundInv = inventory.find(inv => inv.id === req.params.id);
 
     if(!foundInv)
     {
@@ -40,6 +40,7 @@ const createNewWarehouse = (req, res) => {
         res.status(400).json({error: 'The information provided is invalid or some information is missing.'});
     }
 };
+
 const createNewInvItem = (req, res) => {
     const id = `I` + inventory.length;
     const {name, description, quantity, lastOrdered, location, isInstock, categories, warehouseId} = req.body;
@@ -61,9 +62,6 @@ const createNewInvItem = (req, res) => {
         res.status(400).json({error: 'The information provided is invalid or some information is missing.'});
     }
 }
-
-
-
 
 const deleteItem = (req, res) => {
     inventory.forEach((item, index) => {

@@ -3,7 +3,7 @@
 .navBar{
 position: fixed;
 top: 0;
-background-color: #000000;
+background-color: $black;
 display: flex;
 flex-direction: column;
 width: 100%;
@@ -35,7 +35,7 @@ height: 80px;
 
         &--active{
             color: $white;
-            padding-bottom: 0.5rem;    
+            padding-bottom: 0.6rem;    
             width: 50%;            
             border-bottom: 4px solid $white;
         }
@@ -65,7 +65,7 @@ height: 80px;
         }
     }
 
-    @media (min-width: 1080px){  
+    @media (min-width: 1024px){  
             
         padding-left: 11.25rem;
         padding-right: 11.25rem;
@@ -84,7 +84,4 @@ height: 80px;
             }
         }
     }
-
-
-
 }
