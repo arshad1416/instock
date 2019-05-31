@@ -281,28 +281,28 @@ a {
     -webkit-align-items: center;
 
     @media (min-width: 720px){
-        left: 540px;
+        left: 480px;
     }
 
     @media (min-width: 1080px){
-        left: 980px;
+        left: 900px;
     }
     
   }
 
-    &__info-desktop {
-        @include desktop {
-            width: 218px;
-            padding-left: 2px;
-        }
-    }
+    // &__info-desktop {
+    //     @include desktop {
+    //         width: 218px;
+    //         padding-left: 2px;
+    //     }
+    // }
 
-    &__info-status {
-        @include desktop {
-            width: 140px;
-        }
-    }
-}
+    // &__info-status {
+    //     @include desktop {
+    //         width: 140px;
+    //     }
+    // }
+
 .search-container{
     display: flex;
     flex-direction: row;
