@@ -1,5 +1,10 @@
 @import '../../mixins';
 @import '../../variable';
+
+a {
+    text-decoration: none;
+}
+
 .inventory{
     margin-top: 100px;
     @media (min-width: 768px){
@@ -27,6 +32,8 @@
                 align-items: center;
             }
         }
+
+
 
     }
     &__search-container{
