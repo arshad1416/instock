@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import searchIcon from '../../assets/svg/Icon-search.svg';
 import './inventory.scss';
 import axios from 'axios';
 import addIcon from '../../assets/svg/Icon-add.svg';
 import InventoryModal from '../inventoryModal/inventoryModal';
 import InventoryItem from './inventoryItem';
+import InventoryHeading from './inventoryHeading';
 
 class Inventory extends Component {
     state = {
@@ -39,26 +39,17 @@ class Inventory extends Component {
     }
 
     render() {
-        const style = this.state.hideLocations ? {display: 'none'} : {};
+        // const style = this.state.hideLocations ? {display: 'none'} : {};
 
         return (
             <>
             <InventoryModal show={this.state.isOpen} onClose={this.toggleModal} />
-            <section className="locations" style = {style}>
-                <div className="locations__header--tablet">
-                    <h1 className="locations__header">Inventory</h1>
-                    <form className="locations__search-container">
-                        <button className="locations__search-container__button" type="submit"><img className="locations__search-container__icon" src ={searchIcon} alt="S"/></button>
-                        <input type="text" className="locations__search-container__bar" placeholder="Search" name="search"></input>
-                    </form>
-                </div>
-                <InventoryItem inventory={this.state.inventory}/>
-                    <button className="warehouse__addButton" type="button"
-                        onClick={this.toggleModal}
-                    >
-                        <img src={addIcon} alt="Plus Sign" className="warehouse__plusSign" />
-                    </button>
-            </section>
+            <InventoryHeading />
+            <InventoryItem inventory={this.state.inventory}/>
+                <button className="warehouse__addButton" type="button"
+                    onClick={this.toggleModal}>
+                    <img src={addIcon} alt="Plus Sign" className="warehouse__plusSign" />
+                </button>
             </>
         );
     }

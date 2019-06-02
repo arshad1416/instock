@@ -5,46 +5,44 @@ import './inventoryModal.scss';
 
 class InventoryModal extends Component {
 
-    state ={
-        name:'',
-        address:'',
-        city:'',
-        province: 'Ontario',
-        contactName:'',
-        position:'',
-        phone:'',
-        email:'',
-        inventoryCategories:''
-    }
-
-    newWarehouse = () => {
-        const name = this.state.name;
-        const address = this.state.address.street;
-        const city = this.state.address.city;
-        const province = this.state.address.province;
-        const contactName = this.state.contact.name;
-        const position = this.state.contact.title;
-        const phone = this.state.contact.phone;
-        const email = this.state.contact.email;
-        const inventoryCategories = this.state.inventoryCategories;
-
-    axios
-        .post(`http://localhost:8080/videos/upload`, {name, address, city, province, contactName, position, phone, email, inventoryCategories})
-        .then(res => {
-            console.log(res);
-            console.log(res.data);
-        })
+    state = {
+        name: '',
+        description: '',
+        quantity: '',
+        lastOrdered: '',
+        location: '',
     }
 
     handleSubmit = (event) => {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
 
-        this.setState({
-            [name]: value
-        });
-    }
+        const formData = {
+            name: event.target.name.value,
+            description: event.target.description.value,
+            quantity: event.target.quantity.value,
+            lastOrdered: event.target.lastOrdered.value,
+            location: event.target.location.value,
+    };
+
+    const newItem = axios
+        .post(`http://localhost:8080/inventory`, formData)
+        .then(res => {
+            axios.get(`http://localhost:8080/inventory`)
+            .then(res => {
+                this.setState({
+                    inventory: [this.state.inventory, newItem]
+                })
+            })
+        })
+    };
+
+    componentDidUpdate() {
+		axios
+			.get(`http://localhost:8080/inventory/`)
+			.then(res => {
+				const inventory = res.data.inventoryArray;
+				this.setState({ inventory });
+			});
+	};
 
     render() {
 
@@ -55,66 +53,66 @@ class InventoryModal extends Component {
         return (
             <main className="background">
                 <section className="warehouseModal warehouseModal__backDrop">
-                    <form className="warehouseModal__form" onClick={this.handleSubmit} >
+                    <form className="warehouseModal__form" onSubmit={this.handleSubmit}>
                         <h1 className="warehouseModal__title">
                             Create New
                         </h1>
-                        <section className="warehouseModal__spacing warehouseModal__warehouse">
-                            <h2 className="warehouseModal__fieldTitle" htmlFor="warehouse">
-                                product
-                            </h2>
-                            <input type="text" className="warehouseModal__field" name="warehouse" placeholder="Item Name" required value={this.state.name} onClick={this.handleSubmit} />
-                        </section>
                         <div className="warehouseModal__tabletMode">
                             <section className="warehouseModal__spacing warehouseModal__address warehouseModal__marginRight">
-                                <h2 className="warehouseModal__fieldTitle" htmlFor="address">
-                                    last ordered
+                                <h2 className="warehouseModal__fieldTitle" htmlFor="name">
+                                    product
                                 </h2>
-                                <input type="text" className="warehouseModal__field" name="address" placeholder="yyyy-mm-dd" required value={this.state.address} onClick={this.handleSubmit}/>
-                            </section>
-                            <section className="warehouseModal__spacing warehouseModal__contactName warehouseModal__marginRight">
-                                <h2 className="warehouseModal__fieldTitle" htmlFor="contactName">
-                                    city
-                                </h2>
-                                <input type="text" className="warehouseModal__field" name="contactName" placeholder="City" required value={this.state.contactName} onClick={this.handleSubmit}/>
+                                <input type="text" className="warehouseModal__field" name="name" placeholder="Item Name" required/>
                             </section>
                             <section className="warehouseModal__spacing warehouseModal__location">
-                                <h2 className="warehouseModal__fieldTitle" htmlFor="location">
-                                    country
+                                <h2 className="warehouseModal__fieldTitle" htmlFor="lastOrdered">
+                                    last ordered
                                 </h2>
-                                <select className="warehouseModal__field warehouseModal__dropDown" name="location" value={this.state.city} onClick={this.handleSubmit}>
-                                    <option value="Toronto">Canada</option>
-                                    <option value="Mississauga">USA</option>
-                                    <option value="Brampton">Mexico</option>
-                                    <option value="Caledon">Sweden</option>
-                                    <option value="Pickering">Durian Land</option>
-                                </select>
+                                <input type="text" className="warehouseModal__field" name="lastOrdered" placeholder="dd-mm-yyyy" required/>
                             </section>
                         </div>
                         <div className="warehouseModal__tabletMode">
-                            <section className="warehouseModal__spacing warehouseModal__position">
-                                <h2 className="warehouseModal__fieldTitle" htmlFor="position">
-                                    quantity
+                            <section className="warehouseModal__spacing warehouseModal__contactName warehouseModal__marginRight">
+                                <h2 className="warehouseModal__fieldTitle" htmlFor="city">
+                                    city
                                 </h2>
-                                <input type="text" className="warehouseModal__field" name="position" placeholder="0" required value={this.state.title} onClick={this.handleSubmit}/>
+                                <input type="text" className="warehouseModal__field" name="city" placeholder="City" required/>
                             </section>
+                            <section className="warehouseModal__spacing warehouseModal__location">
+                                 <h2 className="warehouseModal__fieldTitle" htmlFor="location">
+                                     country
+                                 </h2>
+                                 <select className="warehouseModal__field warehouseModal__dropDown" name="location" value={this.state.city} onClick={this.handleSubmit}>
+                                     <option value="Toronto">Canada</option>
+                                     <option value="Mississauga">USA</option>
+                                     <option value="Brampton">Mexico</option>
+                                     <option value="Caledon">Sweden</option>
+                                     <option value="Pickering">Durian Land</option>
+                                 </select>
+                             </section>
                         </div>
                         <div className="warehouseModal__tabletMode">
                             <section className="warehouseModal__spacing warehouseModal__phoneNumber warehouseModal__marginRight">
-                                <h2 className="warehouseModal__fieldTitle" htmlFor="phoneNumber">
+                                <h2 className="warehouseModal__fieldTitle" htmlFor="quantity">
+                                    quantity
+                                </h2>
+                                <input type="tel" className="warehouseModal__field" name="quantity" placeholder="0" required/>
+                            </section>
+                            <section className="warehouseModal__spacing warehouseModal__email">
+                                <h2 className="warehouseModal__fieldTitle" htmlFor="email">
                                     status
                                 </h2>
                                 <Switch />
                             </section>
                         </div>
                         <section className="warehouseModal__spacing warehouseModal__itemDescription">
-                            <h2 className="warehouseModal__fieldTitle" htmlFor="itemDescription">
-                                item description
+                            <h2 className="warehouseModal__fieldTitle" htmlFor="description">
+                                item description 
                             </h2>
-                            <textarea type="text" className="warehouseModal__field warehouseModal__textArea" name="itemDescription" placeholder="(Optional)" required value={this.state.inventoryCategories} onClick={this.handleSubmit}/>
+                            <textarea type="text" className="warehouseModal__field warehouseModal__textArea" name="description" placeholder="(Optional)" required/>
                         </section>
                         <section className="warehouseModal__buttons">
-                            <button className="warehouseModal__buttonSave" onClick={this.handleSubmit}>
+                            <button className="warehouseModal__buttonSave" type='submit'>
                                 save
                             </button>
                             <button className="warehouseModal__buttonCancel" onClick={this.props.onClose}>

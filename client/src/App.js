@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Main from './components/main/main';
 import Navbar from './components/navbar/navbar';
 import Warehouses from './components/warehouses/warehouses';
 import Inventory from './components/inventory/inventory';
@@ -15,7 +14,7 @@ class App extends Component {
       <BrowserRouter>
             <Navbar />
           <Switch>
-            <Route path="/" exact component={Main} />
+            <Route path="/" exact component={Inventory} />
             <Route exact path="/warehouses" component={Warehouses} />
             <Route exact path="/inventory" component={Inventory} />
             <Route exact path="/warehouses/:id" component={Warehouses} />

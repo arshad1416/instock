@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
-<<<<<<< HEAD
-import './warehousemodal.scss';
-=======
 import shortid from 'shortid';
 import '../warehousemodal/warehousemodal.scss';
->>>>>>> develop
 
 class Warehousemodal extends Component {
 
