@@ -50,7 +50,8 @@ class Warehousemodal extends Component {
             .post (`http://localhost:8080/newwarehouses`, formData)
             .then ((response) => {
                 console.log(response);
-            })
+            });
+            this.props.onClose();
         };
 
     render() {
