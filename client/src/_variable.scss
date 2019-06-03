@@ -1,0 +1,57 @@
+// colour
+$black: #323232;
+$instock-blue: #004892;
+$white: #ffffff;
+$silver: #afafaf;
+$instock-blue-dark: #002f5f;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;
+$paragraphText: #323232;
+$textLabel: #afafaf;
+$textFieldBorder: #e1e1e1;
+$textFieldBackground: #fafafa;
+$navigationbackgroundfill: #323232;
+
+//fonts
+$defaultFont-Regular: 'Avenir_Next_Regular', 'Roboto_Normal', Helvetica;
+$defaultFont-Demi: 'Avenir_Next_Demi', 'Roboto_Medium', Helvetica;
+$defaultFont-Bold: 'Avenir_Next_Bold', 'Roboto_Bold', Helvetica;
+
+@font-face {
+    font-family: 'Avenir_Next_Regular';
+    src: url('../../assets/Avenir_Next/subset-AvenirNextLTPro-Regular.woff') format('woff'),
+    url('../../assets/Avenir_Next/subset-AvenirNextLTPro-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Avenir_Next_Demi';
+    src: url('../../assets/Avenir_Next/subset-AvenirNextLTPro-Demi.woff2') format('woff2');
+    // src: url('../../client/src/assets/Avenir_Next/subset-AvenirNextLTPro-Demi.woff') format('woff');
+    // url('../../client/src/assets/Avenir_Next/subset-AvenirNextLTPro-Demi.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Avenir_Next_Bold';
+    src: url('../../assets/Avenir_Next/subset-AvenirNextLTPro-Bold.woff2') format('woff2');
+    // src: url('../../client/src/assets/Avenir_Next/subset-AvenirNextLTPro-Bold.woff') format('woff');
+    // url('../../client/src/assets/Avenir_Next/subset-AvenirNextLTPro-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto_Normal', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+}
+
+@font-face {
+    font-family: 'Roboto_Medium', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Roboto:500');
+}
+
+@font-face {
+    font-family: 'Roboto_Bold', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Roboto:900');
+}
+
+//breakpoints
+$tablet-width: "(min-width: 48rem) and (max-width: 1439px)";
+$desktop-width: "(min-width: 90rem)";

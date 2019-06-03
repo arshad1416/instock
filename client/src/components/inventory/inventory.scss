@@ -1,0 +1,328 @@
+@import '../../mixins';
+@import '../../variable';
+
+a {
+    text-decoration: none;
+}
+
+.inventory{
+    margin-top: 100px;
+    @media (min-width: 768px){
+        margin-top: 117px;
+    }
+    @media (min-width: 1440px){
+        margin-top: 147px;
+    }
+    @include side-margin();
+    &__header{
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        @include mobile-h1();
+        @media (min-width: 768px){
+            margin-top: 0;
+            margin-bottom: 0;
+            @include desktop-tablet-h1();
+        }
+        &--tablet{
+            @media (min-width: 768px){
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+
+
+    }
+    &__search-container{
+        display: flex;
+        flex-direction: row;
+        width: 230px;
+        margin-bottom: 2rem;
+        border: solid 1px $textFieldBorder;
+        border-radius: 0.25rem;
+        @media (min-width: 321px){
+            width: 100%;
+            
+        }
+        @media (min-width: 768px){
+            margin-bottom: 0;
+            margin-right: 1.5rem;
+            width: 219px;
+        }
+        
+        @media (min-width: 820px){
+            width: 40vw;
+        }
+        @media (min-width: 1024px){
+            width: 219px;
+        }
+        &:focus{
+            outline:none;
+        }
+        
+        &__bar{
+            height: 46px;
+            background-color:$textFieldBackground;
+            border: none;
+            flex-grow: 100;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            &:focus{
+                outline:none;
+            }
+        }
+        
+        &__button{
+            border-radius: 0.25rem;
+            box-sizing: border-box;
+            height: 3rem;
+            width: 3rem;
+            background-color: $textFieldBackground;
+            justify-self: left;
+            border:none;
+            margin-right: -5px;
+        }
+    }
+}
+.heading {
+    @include side-margin;
+    
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__label-wrap {
+        @include side-margin;
+        display: flex;
+        justify-content: space-between;
+        @media (min-width: 768px){
+            width: 720px;
+        }
+        @media (min-width: 1024px){
+            width: 664px;
+        }
+        @media (min-width: 1440px){
+            width: 1080px;
+        }
+    }
+
+    &__label {
+        display: none;
+
+        @include tablet {
+            @include desktop-tablet-h4;
+            display: block;
+            color: $silver;
+        }
+
+        @include desktop {
+            @include desktop-tablet-h4;
+            display: block;
+            color: $silver;
+        }
+    }
+
+    &__label-item {
+        width: 200px;
+        margin-left: 4px;
+    }
+
+    &__label-specifics {
+        width: 160px;
+    }
+}
+
+.item {
+    @include side-margin;
+    border-bottom: solid 1px $mercury;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+        width: 720px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    @media (min-width: 1024px){
+        width: 664px;
+    }
+    @media (min-width: 1440px){
+        width: 1080px;
+    }
+    @include desktop {
+        // width: 1024px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    &__label-button-wrap {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 0.25rem;
+    }
+
+    &__label {
+        @include mobile-h4;
+        font-family: $defaultFont-Demi;
+        color: $silver;
+        margin: 0 0 1rem 0;
+
+        @include tablet {
+            display: none;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__button-mobile {
+        @include tablet {
+            display: none;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__button-tablet {
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+
+        @include desktop {
+            display: block;
+        }
+    }
+
+    &__item-description-wrap {
+        @include tablet {
+            width: 171px;
+        }
+
+        @include desktop {
+            width: 255px;
+        }
+    }
+
+    &__name {
+        @include mobile-h2;
+        font-family: $defaultFont-Demi;
+        margin: 0 0 1rem 0;
+    }
+
+    &__info {
+        @include mobile-h4;
+        margin: 0 0 1.5rem 0;
+
+        @include tablet {
+            @include desktop-tablet-h4;
+            width: 137px;
+        }
+
+        @include desktop {
+            @include desktop-tablet-h4;
+            width: 220px;
+        }
+
+    }
+
+    &__info-desktop {
+        @include desktop {
+            width: 218px;
+            padding-left: 2px;
+        }
+    }
+
+    &__info-status {
+        @include desktop {
+            width: 140px;
+        }
+    }
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $instock-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    &:active {
+        background: $instock-blue-dark;
+    }
+
+    @include tablet {
+        right: 100px;
+        bottom: 100px;
+    }
+
+    @include desktop {
+        right: 200px;
+        bottom: 200px;
+        height: 80px;
+        width: 80px;
+    }
+
+    &__logo {
+        width: 20px;
+    }
+}
+
+.search-container{
+    display: flex;
+    flex-direction: row;
+    width: 230px;
+    margin-bottom: 2rem;
+    border: solid 1px $textFieldBorder;
+    border-radius: 0.25rem;
+    @media (min-width: 768px){
+        margin-bottom: 0;
+        margin-right: 1.5rem;
+        width: 219px;
+    }
+    &:focus{
+        outline:none;
+    }
+    
+    &__bar{
+        height: 46px;
+        background-color:$textFieldBackground;
+        border: none;
+        flex-grow: 100;
+        border-radius: 0.25rem;
+        font-size: 0.8rem;
+        &:focus{
+            outline:none;
+        }
+    }
+    
+    &__button{
+        border-radius: 0.25rem;
+        box-sizing: border-box;
+        height: 3rem;
+        width: 3rem;
+        background-color: $textFieldBackground;
+        justify-self: left;
+        border:none;
+        margin-right: -5px;
+    }
+}

@@ -1,0 +1,166 @@
+@import '../../_mixins';
+@import '../../variable';
+
+.warehouseItem{
+    width: 100%;
+    &--desk{
+        @media (min-width: 1440px){
+        display: flex;
+        margin-top: 1.5rem;
+    }}
+    &--tablet{
+        @media(min-width: 768px){
+            display: flex;
+        }
+    }
+    &__labels{
+        display: none;
+        @media (min-width: 1440px){
+            display: flex;
+            @include desktop-tablet-h4(); 
+            color: $textLabel;
+            &__warehouse{
+                padding-left: 0.5rem;
+                width: 276px;
+                margin-block-end: 0;
+            }
+            &__contact{
+                width: 276px;
+                margin-block-end: 0;
+            }
+            &__info{
+                width: 276px;
+                margin-block-end: 0;
+            }
+            &__categories{
+                margin-block-end: 0;
+            }
+        }
+
+    }
+    &__header{
+        @include mobile-h2();
+        margin-bottom: 0.5rem;
+        @media (min-width: 768px){
+            @include desktop-tablet-h4();
+            padding-left: 0.5rem;
+        }
+        @media (min-width: 1440px){
+            width: 276px;
+            margin-block-start: 0;
+        }
+        &--flexRow{
+            display: flex;
+            justify-content: space-between;
+        }
+        &--desk{
+            @media (min-width: 1440px){
+                display: flex;
+                flex-direction: column;
+                
+            }
+        }
+    }
+    &__adress{
+        @include mobile-h4();
+        margin-bottom: 1rem;
+        @media (min-width: 768px){
+            @include desktop-tablet-h4();
+            position: relative;
+            bottom: 10px;
+            padding-left: 0.5rem;
+        }
+        @media (min-width: 1440px){
+            bottom: 8px;
+        }
+        
+    }
+    &__button{
+        height: 18px;
+        margin-top: 0.6rem;
+        background: none;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+        @media (min-width: 768px){
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 1440px){
+            display: none;
+        }
+    }
+    &__name{
+        @include mobile-h4();
+        @media (min-width: 768px){
+            @include desktop-tablet-h4();
+            width: 248px;
+            padding-left: 0.5rem;
+        }
+        @media (min-width: 1440px){
+            width: 276px;
+            padding-left: 0;
+        }
+    }
+    &__title{
+        @include mobile-h4();
+        font-style: italic;
+        margin-bottom: 1rem;
+        @media (min-width: 768px){
+            @include desktop-tablet-h4();
+            padding-left: 0.5rem;
+        }
+        @media (min-width: 1440px){
+            width: 276px;
+            padding-left: 0;
+        }
+    }
+    &__phone{
+        @include mobile-h4();
+        @media (min-width: 768px){
+            @include desktop-tablet-h4();
+            width: 248px;
+        }
+        @media (min-width: 1440px){
+            width: 276px;
+            
+        }
+    }
+    &__email{
+        @include mobile-h4();
+        font-style: italic;
+        margin-bottom: 1rem;
+        @media (min-width: 768px){
+            @include desktop-tablet-h4();
+        }
+    }
+    &__categories{
+        @include mobile-h4();
+        width:100%;
+        word-wrap: break-word;
+        margin-bottom: 1.5rem;
+        @media (min-width: 768px){
+            @include desktop-tablet-h4();
+        }
+        @media (min-width: 1440px){
+            width: 218px;
+        }
+    }
+    &:last-child{
+        border-bottom: none;
+    }
+    
+    &__button2{
+        display: none;
+        background: none;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+        @media(min-width:1440px){
+            display:flex;
+            align-self: center;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
