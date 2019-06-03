@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './inventory.scss';
 import kebab from '../../assets/svg/Icon-kebab-default.svg';
+import {Link} from 'react-router-dom';
 
 class InventoryItemList extends Component {
     state= {            
@@ -11,7 +12,7 @@ class InventoryItemList extends Component {
 
     render(){
         
-        const {id, name, description, lastOrdered, location, quantity} = this.props.item;  
+        const {id, name, description, lastOrdered, location, quantity, isInstock} = this.props.item;  
         
         const p_style = (this.props.activeKebobId === id)&&(this.props.disable)&&(this.props.clickOut) ? "mega-menu true" : "mega-menu false";
        
@@ -30,7 +31,7 @@ class InventoryItemList extends Component {
                     
                 </div>
                 <div className="item__item-description-wrap">
-                    <p className="item__name">{name}</p>
+                    <Link to={`/inventory/${id}`} ><p className="item__name">{name}</p></Link>
                     <p className="item__info">{description}</p>
                 </div>
                 <h4 className="item__label">LAST ORDERED</h4>
@@ -40,7 +41,7 @@ class InventoryItemList extends Component {
                 <h4 className="item__label">QUANTITY</h4>
                 <p className="item__info">{quantity}</p>
                 <h4 className="item__label">STATUS</h4>
-                <p className="item__info">{/*item.isInStock*/}In Stock</p>
+                <p className="item__info">{isInstock ? 'In Stock': 'Out of Stock'}</p>
                 <div className="kebob-item">
                     <img className="item__button-tablet" src={kebab} alt="remove button" id={id} onClick={this.props.handleKebob}/>                    
                 </div>    
