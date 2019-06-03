@@ -26,7 +26,6 @@ class Warehouses extends Component {
         axios.get('http://localhost:8080/warehouses')
             .then( response => {
                 this.setState({warehouses: response.data})
-                // console.log(this.state.warehouses)
         }) 
     }
 
