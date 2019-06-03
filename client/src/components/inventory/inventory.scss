@@ -287,21 +287,40 @@ a {
     @media (min-width: 1080px){
         left: 900px;
     }
-    
-  }
+}
 
-    // &__info-desktop {
-    //     @include desktop {
-    //         width: 218px;
-    //         padding-left: 2px;
-    //     }
-    // }
+.button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $instock-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 
-    // &__info-status {
-    //     @include desktop {
-    //         width: 140px;
-    //     }
-    // }
+    &:active {
+        background: $instock-blue-dark;
+    }
+
+    @include tablet {
+        right: 100px;
+        bottom: 100px;
+    }
+
+    @include desktop {
+        right: 200px;
+        bottom: 200px;
+        height: 80px;
+        width: 80px;
+    }
+
+    &__logo {
+        width: 20px;
+    }
+}
 
 .search-container{
     display: flex;
