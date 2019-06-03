@@ -1,0 +1,275 @@
+@import '../../mixins';
+@import '../../variable';
+
+@keyframes warehouseModal {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.background {
+    display: flex;
+    position: fixed;
+    background-color: rgba(0,0,0,0.3);
+    top: 0;
+    height: 100%;
+    width: 100%;
+    // transition: all 10s;
+    z-index: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 10s;
+}
+
+.warehouseModal {
+        position: relative;
+        background-color: $white;
+        padding-left: 16px;
+        padding-right: 16px;
+        z-index: 2;
+        margin: auto;
+        // transition: all 10s;
+
+    @include tablet{
+        padding: 3.5rem 3rem 2.5rem 3rem;
+        border-radius: 2px;
+        width: 482px;
+        height: 700px;
+
+        &__tabletMode {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &__marginRight {
+            margin-right: 40px;
+        }
+
+        &__backDrop {
+            padding: 50;
+        }
+    }
+
+    @include tablet-desktop{
+        padding: 3.5rem 3rem 2.5rem 3rem;
+        border-radius: 2px;
+        width: 482px;
+        height: 700px;
+
+        &__tabletMode {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &__marginRight {
+            margin-right: 40px;
+        }
+
+        &__backDrop {
+            padding: 50;
+        }
+    }
+
+        @include desktop {
+            padding: 3.5rem 3rem 2.5rem 3rem;
+            border-radius: 2px;
+            width: 482px;
+            height: 700px;
+
+            &__tabletMode {
+                display: flex;
+                flex-direction: row;
+            }
+
+            &__marginRight {
+                margin-right: 40px;
+            }
+
+            &__backDrop {
+                padding: 50;
+            }
+        }
+
+    &__title {
+        @include mobile-h1;
+        margin-bottom: 1.5rem;
+
+        @include tablet {
+            @include desktop-tablet-h1;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        @include tablet-desktop { 
+            @include desktop-tablet-h1;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        @include desktop {
+            @include desktop-tablet-h1;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__spacing {
+        margin-bottom: 1rem;
+    }
+
+    &__fieldTitle {
+        margin: 0;
+        padding-bottom: 0.5rem;
+        @include mobile-h2;
+        color: $textLabel;
+        text-transform: uppercase;
+
+        @include tablet {
+            @include desktop-tablet-h3;
+            color: $textLabel;
+        }
+
+        @include tablet-desktop {
+            @include desktop-tablet-h3;
+            color: $textLabel;
+        }
+
+        @include desktop {
+            @include desktop-tablet-h3;
+            color: $textLabel;
+        }
+    }
+
+    &__field {
+        @include input;
+
+        @include tablet {
+            @include desktop-tablet-h3;
+            width: 13.75rem;
+        }
+
+        @include tablet-desktop {
+            @include desktop-tablet-h3;
+            width: 13.75rem;
+        }
+        
+        @include desktop {
+            @include desktop-tablet-h3;
+            width: 13.75rem;
+        }
+    }
+    
+    &__dropDown {
+        width: 288px;
+
+        @include tablet {
+            width: 13.75rem;
+        }
+
+        @include tablet-desktop {
+            width: 13.75rem;
+        }
+
+        @include desktop {
+            width: 13.75rem;
+        }
+    }
+
+    &__textArea {
+        height: 5rem;
+
+        @include tablet {
+            width: 480px;
+        }
+
+        @include tablet-desktop {
+            width: 480px;
+        }
+        
+        @include desktop {
+            width: 480px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 40px;
+        }
+
+        @include tablet-desktop {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 40px;
+        }
+
+        @include desktop {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 40px;
+        }
+    }
+
+    &__buttonSave {
+        width: 18rem;
+        height: 3rem;
+        padding: 0;
+        background-color: $instock-blue;
+        border-radius: 4px;
+        text-transform: uppercase;
+        @include mobile-h2;
+        color: $alabaster;
+
+        @include tablet {
+            @include desktop-tablet-h3;
+            color: $alabaster;
+            width: 10rem;
+            margin-left: 3rem;
+        }
+
+        @include tablet-desktop {
+            @include desktop-tablet-h3;
+            color: $alabaster;
+            width: 10rem;
+            margin-left: 3rem;
+        }
+
+        @include desktop {
+            @include desktop-tablet-h3;
+            color: $alabaster;
+            width: 10rem;
+            margin-left: 3rem;
+        }
+    }
+
+    &__buttonCancel {
+        width: 18rem;
+        margin: 1.5rem 0;
+        padding: 0;
+        text-transform: uppercase;
+        @include mobile-h2;
+        color: $instock-blue;
+
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+        }
+
+        @include tablet-desktop {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+        }
+
+        @include desktop {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+        }
+    }
+}
+
