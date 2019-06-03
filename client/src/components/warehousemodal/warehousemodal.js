@@ -20,11 +20,7 @@ class Warehousemodal extends Component {
             phone:'',
             email:''
         },
-        inventoryCategories:''
-    }
-
-    componentDidUpdate () {
-        
+        inventoryCategories:'',
     }
 
     handleSubmit = (event) => {
