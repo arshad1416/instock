@@ -169,6 +169,10 @@ a {
         display: flex;
         justify-content: space-between;
         padding-right: 0.25rem;
+
+        // Addeed by Harminder Kaur
+        position: relative;    
+        
     }
 
     &__label {
@@ -239,18 +243,49 @@ a {
         }
 
     }
+}
 
-    &__info-desktop {
-        @include desktop {
-            width: 218px;
-            padding-left: 2px;
-        }
+
+.kebob-item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 12px;    
+  }
+.mega-menu{
+    display: none;
+  }
+  .mega-menu.true{     
+    display: flex;
+  }
+  .mega-menu-content{
+    @include mobile-h4;  
+    background: #ffffff;
+
+    padding-left: 10px;
+    z-index: 10;
+    border: 1px solid #ccc;
+    position: absolute;
+    border-radius: 0.2rem;
+    border: solid 1px $mercury;
+        
+    top: 25px;
+    right: 1px;
+    width: 161px;
+    height: 44px; 
+    
+    
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;        
+    -webkit-align-items: center;
+
+    @media (min-width: 720px){
+        left: 480px;
     }
 
-    &__info-status {
-        @include desktop {
-            width: 140px;
-        }
+    @media (min-width: 1080px){
+        left: 900px;
     }
 }
 
